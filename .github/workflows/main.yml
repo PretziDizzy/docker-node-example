@@ -3,7 +3,7 @@ name: CI to Docker Hub
 on:
   push:
     branches:
-      - [ main ]
+       [ main ]
 
 jobs:
 
@@ -26,6 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
       - 
+      name: Login Docker Username
         uses: docker/login-action@v1 
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
